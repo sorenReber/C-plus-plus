@@ -9,6 +9,7 @@ public:
     float x, y;
     float radius;
     float ballSpeedX, ballSpeedY;
+    bool canReset = false;
 
     Ball(float aX, float aY, float aRadius, float aSpeed)
     //Ball constructor
@@ -23,8 +24,20 @@ public:
     {
         DrawCircle((int) x, (int) y, radius, RAYWHITE);
     };
+    void ballReset(float centerX, float centerY, float speed)
+    // Reset the ball after it exits the screen, called when player presses the 'r' key.
+    {
+        if (canReset)
+        {
+           x = centerX;
+           y = centerY;
+           ballSpeedX = speed;
+           ballSpeedY = speed;
+           canReset = false;
+        }
+    }
     void screenCheck()
-    // Check to see if it's hitting the screen edges and either bounce if it's the top or bottom or declare a winner.
+    // Check to see if the ball is hitting the screen edges and bounce if it's the top or bottom or declare a winner if left or right side.
     {
         if(y < 0 || y > GetScreenHeight() - radius)
         {
@@ -34,11 +47,13 @@ public:
         {
             int textWidth = MeasureText("Right side Wins", 30);
             DrawText("Right side wins", GetScreenWidth() / 2 - textWidth / 2, GetScreenHeight() / 2, 30, GOLD);
+            canReset = true;
         }
         if(x > GetScreenWidth())
         {
             int textWidth = MeasureText("Left side Wins", 30);
             DrawText("Left side wins", GetScreenWidth() / 2 - textWidth / 2, GetScreenHeight() / 2, 30, GOLD);
+            canReset = true;
         }
     }
 };
@@ -105,10 +120,14 @@ int main(void)
     // Main game loop
     while (!WindowShouldClose())    // Detect window close button or ESC key
     {
-        // Update
+        // Ball movements and functions
         ball.x += ball.ballSpeedX * GetFrameTime();
         ball.y += ball.ballSpeedY * GetFrameTime();
         ball.screenCheck();
+        if(IsKeyReleased(KEY_R))
+        {
+            ball.ballReset(screenWidth / 2, screenHeight / 2, 200);
+        }
         //Paddle Movements
         rightPaddle.paddleMove(GetFrameTime());
         leftPaddle.paddleMove(GetFrameTime());

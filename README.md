@@ -11,7 +11,7 @@ I created these programs in this repository to learn how to create programs in c
 
 # Development Environment
 
-* Code::Blocks
+* CodeBlocks
 * Visual Studio Code (GitHub functionality and this README only)
 
 * C++
