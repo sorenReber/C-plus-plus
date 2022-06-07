@@ -1,7 +1,7 @@
 # Overview
 
 
-In this repository are a standard basic Hello World. Pong clone built using Raylib from a tutorial but modified to make use of classes and OOP. Battleship game played in the console.
+In this repository are a standard basic Hello World. 2 PlayerPong clone built using Raylib from a tutorial but modified to make use of classes and OOP. Uses W & S for one side and the up & down arrows for the other, r resets the ball after someone wins. Battleship game played in the console.
 
 I created these programs in this repository to learn how to create programs in C++. 
 
@@ -28,7 +28,6 @@ I created these programs in this repository to learn how to create programs in C
 
 # Future Work
 
-{Make a list of things that you need to fix, improve, and add in the future.}
-* Future improvement: Pong: Add scores. Maybe even ability to track a high score.
-* Future change: Battleship: Move from a console based interaction to one making use of Raylib.
+* Future improvement: Pong: Add scores. Maybe even ability to track a high score. Make it single player by implementing simple bot movements and be able to choose one or two player.
+* Future change: Battleship: Move from a console based interaction to one making use of Raylib, include sprites, sounds, and generally more interactive.
 * Future work: Come up with more programs to help develop my C++ skills. Maybe some non game programs although the games are fun to work on.
