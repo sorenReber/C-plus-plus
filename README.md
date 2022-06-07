@@ -1,7 +1,7 @@
 # Overview
 
 
-In this repository are a standard basic Hello World. 2 PlayerPong clone built using Raylib from a tutorial but modified to make use of classes and OOP. Uses W & S for one side and the up & down arrows for the other, r resets the ball after someone wins. Battleship game played in the console.
+In this repository are a standard basic Hello World. Two player Pong clone built using Raylib from a tutorial but modified to make use of classes and OOP. Uses W & S for one side and the up & down arrows for the other, r resets the ball after someone wins. Battleship game played in the console.
 
 I created these programs in this repository to learn how to create programs in C++. 
 
